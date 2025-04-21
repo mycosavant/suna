@@ -55,6 +55,11 @@ export type ToolCall = {
   arguments: Record<string, unknown>;
 }
 
+export interface InitiateAgentResponse {
+  thread_id: string;
+  agent_run_id: string;
+}
+
 // Project APIs
 export const getProjects = async (): Promise<Project[]> => {
   try {
@@ -957,5 +962,51 @@ export const updateThread = async (threadId: string, data: Partial<Thread>): Pro
 
 export const toggleThreadPublicStatus = async (threadId: string, isPublic: boolean): Promise<Thread> => {
   return updateThread(threadId, { is_public: isPublic });
+};
+
+export const initiateAgent = async (formData: FormData): Promise<InitiateAgentResponse> => {
+  try {
+    const supabase = createClient();
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session?.access_token) {
+      throw new Error('No access token available');
+    }
+
+    // Check if backend URL is configured
+    if (!API_URL) {
+      throw new Error('Backend URL is not configured. Set NEXT_PUBLIC_BACKEND_URL in your environment.');
+    }
+
+    console.log(`[API] Initiating agent with files using ${API_URL}/agent/initiate`);
+    
+    const response = await fetch(`${API_URL}/agent/initiate`, {
+      method: 'POST',
+      headers: {
+        // Note: Don't set Content-Type for FormData
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+      body: formData,
+      // Add cache: 'no-store' to prevent caching
+      cache: 'no-store',
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text().catch(() => 'No error details available');
+      console.error(`[API] Error initiating agent: ${response.status} ${response.statusText}`, errorText);
+      throw new Error(`Error initiating agent: ${response.statusText} (${response.status})`);
+    }
+    
+    return response.json();
+  } catch (error) {
+    console.error('[API] Failed to initiate agent:', error);
+    
+    // Provide clearer error message for network errors
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error(`Cannot connect to backend server. Please check your internet connection and make sure the backend is running.`);
+    }
+    
+    throw error;
+  }
 };
 
