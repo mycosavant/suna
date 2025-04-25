@@ -82,7 +82,7 @@ class Configuration:
     
     # Open Router configuration
     OR_SITE_URL: Optional[str] = None
-    OR_APP_NAME: Optional[str] = "Suna.so"
+    OR_APP_NAME: Optional[str] = "suna.so"
     
     def __init__(self):
         """Initialize configuration by loading from environment variables."""

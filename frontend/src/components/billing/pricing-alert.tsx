@@ -123,7 +123,7 @@ export function PricingAlert({ open, onOpenChange, closeable = true, accountId }
                       <Zap className="h-5 w-5 text-primary" />
                     </div>
                     <h2 id="pricing-modal-title" className="text-2xl font-medium tracking-tight mb-2">
-                      Choose Your Suna Experience
+                      Choose Your Ptah Experience
                     </h2>
                     <p className="text-muted-foreground max-w-lg mx-auto">
                       Due to overwhelming demand and AI costs, we're currently focusing on delivering 
@@ -152,7 +152,7 @@ export function PricingAlert({ open, onOpenChange, closeable = true, accountId }
                           <span className="text-xs text-muted-foreground">No usage limitations</span>
                         </div>
                         <Link 
-                          href="https://github.com/kortix-ai/suna" 
+                          href="https://github.com/kortix-ai/Ptah" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="h-10 w-full flex items-center justify-center gap-2 text-sm font-normal tracking-wide rounded-full px-4 cursor-pointer transition-all ease-out active:scale-95 bg-secondary/10 text-secondary shadow-[0px_1px_2px_0px_rgba(255,255,255,0.16)_inset,0px_3px_3px_-1.5px_rgba(16,24,40,0.24),0px_1px_1px_-0.5px_rgba(16,24,40,0.20)]"
@@ -176,7 +176,7 @@ export function PricingAlert({ open, onOpenChange, closeable = true, accountId }
                           <span className="text-2xl font-semibold">{premiumPlans[0]?.price || "$19"}</span>
                           <span className="ml-2">/month</span>
                         </div>
-                        <p className="text-sm mt-2">Supercharge your productivity with {premiumPlans[0]?.hours || "500 hours"} of Suna</p>
+                        <p className="text-sm mt-2">Supercharge your productivity with {premiumPlans[0]?.hours || "500 hours"} of Ptah</p>
                         <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-primary/10 border-primary/20 text-primary w-fit">
                           {premiumPlans[0]?.hours || "500 hours"}/month
                         </div>
@@ -212,7 +212,7 @@ export function PricingAlert({ open, onOpenChange, closeable = true, accountId }
                           <span className="text-2xl font-semibold">{premiumPlans[1]?.price || "$99"}</span>
                           <span className="ml-2">/month</span>
                         </div>
-                        <p className="text-sm mt-2">Unlock boundless potential with {premiumPlans[1]?.hours || "2000 hours"} of Suna</p>
+                        <p className="text-sm mt-2">Unlock boundless potential with {premiumPlans[1]?.hours || "2000 hours"} of Ptah</p>
                         <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-primary/10 border-primary/20 text-primary w-fit">
                           {premiumPlans[1]?.hours || "2000 hours"}/month
                         </div>

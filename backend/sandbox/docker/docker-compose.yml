@@ -1,12 +1,12 @@
 services:
-  kortix-suna:
+  kortix-Ptah:
     platform: linux/amd64
     build:
       context: .
       dockerfile: ${DOCKERFILE:-Dockerfile}
       args:
         TARGETPLATFORM: ${TARGETPLATFORM:-linux/amd64}
-    image: adamcohenhillel/kortix-suna:0.0.20
+    image: adamcohenhillel/kortix-Ptah:0.0.20
     ports:
       - "6080:6080"  # noVNC web interface
       - "5901:5901"  # VNC port

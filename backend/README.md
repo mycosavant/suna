@@ -1,4 +1,4 @@
-# Suna Backend
+# Ptah Backend
 
 ## Running the backend
 

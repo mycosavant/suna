@@ -1,0 +1,40 @@
+# Backend Sandbox Browser Tool Review
+
+## Overview
+
+Analysis of `backend/agent/tools/sb_browser_tool.py`
+
+## Key Findings & Observations
+
+- **Purpose**: Provides tools for interacting with a browser within the sandbox environment
+- **Mechanism**: Acts as client to a separate browser automation API (http://localhost:8002/api/automation/...)
+    - Uses curl commands via `self.sandbox.process.exec` to interact with this API
+    - Does not directly use browser libraries like Playwright or Selenium
+
+## State Management
+- Each browser action returns a state object (URL, title, screenshot, OCR text)
+- State saved as `browser_state` message type in database via `thread_manager.add_message`
+- Enables agent to retrieve latest browser state for LLM context
+
+## Available Actions
+- **Navigation**: navigate_to, go_back
+- **Waiting**: wait
+- **Clicking**: click_element, click_coordinates
+- **Input**: input_text, send_keys
+- **Scrolling**: scroll_down, scroll_up, scroll_to_text
+- **Tab Management**: switch_tab, close_tab
+- **Dropdown Interaction**: get_dropdown_options, select_dropdown_option
+- **Drag & Drop**: drag_drop
+
+## Notable Issues
+- Several commented-out actions: browser_search_google, browser_open_tab, browser_extract_content
+    - May indicate deprecated or unimplemented functionality
+    - Absence of extract_content is notable as it's a common automation task
+
+## Implementation Details
+- Uses ToolResult for success/failure reporting
+- Provides OpenAPI and XML schemas for each action
+- Robust error handling via try/except blocks
+
+## Summary
+Tool provides extensive browser control by proxying commands to an internal sandbox API, with browser state persistently stored for LLM context awareness.

@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir gunicorn
 
 # Copy the .env file first
-COPY .env .
+# COPY .env .
 
 # Copy the backend code
 COPY . .
@@ -22,3 +22,6 @@ EXPOSE 8000
 
 # 24 workers
 CMD ["gunicorn", "api:app", "--workers", "24", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--timeout", "600", "--graceful-timeout", "300", "--keep-alive", "250", "--max-requests", "0", "--max-requests-jitter", "0", "--forwarded-allow-ips", "*", "--worker-connections", "5000", "--worker-tmp-dir", "/dev/shm", "--preload"]
+
+
+# TODO: removed the COPY .env . step from the Dockerfile, the .env file will not be present in the built image for staging or production environments. This ensures that the application will rely solely on the environment variables set at runtime. Consider using a different method to manage environment variables.

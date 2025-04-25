@@ -1,27 +1,27 @@
 <div align="center">
 
-# Suna - Open Source Generalist AI Agent
+# Ptah - Open Source Generalist AI Agent
 
 (that acts on your behalf)
 
-![Suna Screenshot](frontend/public/banner.png)
+![Ptah Screenshot](frontend/public/banner.png)
 
-Suna is a fully open source AI assistant that helps you accomplish real-world tasks with ease. Through natural conversation, Suna becomes your digital companion for research, data analysis, and everyday challenges—combining powerful capabilities with an intuitive interface that understands what you need and delivers results.
+Ptah is a fully open source AI assistant that helps you accomplish real-world tasks with ease. Through natural conversation, Ptah becomes your digital companion for research, data analysis, and everyday challenges—combining powerful capabilities with an intuitive interface that understands what you need and delivers results.
 
-Suna's powerful toolkit includes seamless browser automation to navigate the web and extract data, file management for document creation and editing, web crawling and extended search capabilities, command-line execution for system tasks, website deployment, and integration with various APIs and services. These capabilities work together harmoniously, allowing Suna to solve your complex problems and automate workflows through simple conversations!
+Ptah's powerful toolkit includes seamless browser automation to navigate the web and extract data, file management for document creation and editing, web crawling and extended search capabilities, command-line execution for system tasks, website deployment, and integration with various APIs and services. These capabilities work together harmoniously, allowing Ptah to solve your complex problems and automate workflows through simple conversations!
 
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./license)
 [![Discord Follow](https://dcbadge.limes.pink/api/server/Py6pCBUUPw?style=flat)](https://discord.gg/Py6pCBUUPw)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kortixai)](https://x.com/kortixai)
-[![GitHub Repo stars](https://img.shields.io/github/stars/kortix-ai/suna)](https://github.com/kortix-ai/suna)
-[![Issues](https://img.shields.io/github/issues/kortix-ai/suna
-)](https://github.com/kortix-ai/suna/labels/bug)
+[![GitHub Repo stars](https://img.shields.io/github/stars/kortix-ai/Ptah)](https://github.com/kortix-ai/Ptah)
+[![Issues](https://img.shields.io/github/issues/kortix-ai/Ptah
+)](https://github.com/kortix-ai/Ptah/labels/bug)
 </div>
 
 
 ## Table of Contents
 
-- [Suna Architecture](#project-architecture)
+- [Ptah Architecture](#project-architecture)
   - [Backend API](#backend-api)
   - [Frontend](#frontend)
   - [Agent Docker](#agent-docker)
@@ -37,7 +37,7 @@ Suna's powerful toolkit includes seamless browser automation to navigate the web
 
 ![Architecture Diagram](docs/images/diagram.png)
 
-Suna consists of four main components:
+Ptah consists of four main components:
 
 ### Backend API
 Python/FastAPI service that handles REST endpoints, thread management, and LLM integration with OpenAI, Anthropic, and others via LiteLLM.
@@ -79,7 +79,7 @@ Handles data persistence with authentication, user management, conversation hist
 
 ## Run Locally / Self-Hosting
 
-Suna can be self-hosted on your own infrastructure. Follow these steps to set up your own instance.
+Ptah can be self-hosted on your own infrastructure. Follow these steps to set up your own instance.
 
 ### Requirements
 
@@ -111,7 +111,7 @@ You'll need the following components:
    - Generate an API key from your account settings
    - Go to [Images](https://app.daytona.io/dashboard/images)
    - Click "Add Image"
-   - Enter `adamcohenhillel/kortix-suna:0.0.20` as the image name
+   - Enter `adamcohenhillel/kortix-Ptah:0.0.20` as the image name
    - Set `/usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf` as the Entrypoint
 
 4. **LLM API Keys**:
@@ -133,8 +133,8 @@ You'll need the following components:
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/kortix-ai/suna.git
-cd suna
+git clone https://github.com/kortix-ai/Ptah.git
+cd Ptah
 ```
 
 2. **Configure backend environment**:
@@ -230,10 +230,10 @@ cd backend
 python api.py
 ```
 
-7. **Access Suna**:
+7. **Access Ptah**:
    - Open your browser and navigate to `http://localhost:3000`
    - Sign up for an account using the Supabase authentication
-   - Start using your self-hosted Suna instance!
+   - Start using your self-hosted Ptah instance!
 
 ## Acknowledgements
 
@@ -254,5 +254,5 @@ python api.py
 
 ## License
 
-Kortix Suna is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
+Kortix Ptah is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
 

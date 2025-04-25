@@ -29,9 +29,9 @@ export const Highlight = ({
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Kortix Suna",
+  name: "Kortix Ptah",
   description: "The Generalist AI Agent that can act on your behalf.",
-  cta: "Hire Suna",
+  cta: "Hire Ptah",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
     "AI Agent",
@@ -43,7 +43,7 @@ export const siteConfig = {
     email: "support@kortix.ai",
     twitter: "https://x.com/kortixai",
     discord: "https://discord.gg/kortixai",
-    github: "https://github.com/Kortix-ai/Suna",
+    github: "https://github.com/Kortix-ai/Ptah",
     instagram: "https://instagram.com/kortixai",
   },
   nav: {
@@ -70,17 +70,17 @@ export const siteConfig = {
       </svg>
     ),
     badge: "100% OPEN SOURCE",
-    githubUrl: "https://github.com/kortix-ai/suna",
-    title: "Suna, the AI Employee.",
-    description: "Suna by Kortix – is a generalist AI Agent that acts on your behalf.",
-    inputPlaceholder: "Ask Suna to...",
+    githubUrl: "https://github.com/kortix-ai/Ptah",
+    title: "Ptah, the AI Employee.",
+    description: "Ptah by Kortix – is a generalist AI Agent that acts on your behalf.",
+    inputPlaceholder: "Ask Ptah to...",
   },
   cloudPricingItems: [
     {
       name: "Free",
       price: "$0",
       description: "For individual use and exploration",
-      buttonText: "Hire Suna",
+      buttonText: "Hire Ptah",
       buttonColor: "bg-secondary text-white",
       isPopular: false,
       hours: "10 min",
@@ -96,7 +96,7 @@ export const siteConfig = {
       name: "Pro",
       price: "$29",
       description: "For professionals and small teams",
-      buttonText: "Hire Suna",
+      buttonText: "Hire Ptah",
       buttonColor: "bg-primary text-white dark:text-black",
       isPopular: true,
       hours: "4 hours",
@@ -113,7 +113,7 @@ export const siteConfig = {
       name: "Enterprise",
       price: "$199",
       description: "For organizations with complex needs",
-      buttonText: "Hire Suna",
+      buttonText: "Hire Ptah",
       buttonColor: "bg-secondary text-white",
       isPopular: false,
       hours: "40 hours",
@@ -331,15 +331,15 @@ export const siteConfig = {
     ],
   },
   featureSection: {
-    title: "How Kortix Suna Works",
+    title: "How Kortix Ptah Works",
     description:
-      "Discover how Kortix Suna transforms your commands into action in four easy steps",
+      "Discover how Kortix Ptah transforms your commands into action in four easy steps",
     items: [
       {
         id: 1,
         title: "Request an Action",
         content:
-          "Speak or type your command—let Kortix Suna capture your intent. Your request instantly sets the process in motion.",
+          "Speak or type your command—let Kortix Ptah capture your intent. Your request instantly sets the process in motion.",
         image:
           "https://images.unsplash.com/photo-1720371300677-ba4838fa0678?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
@@ -347,7 +347,7 @@ export const siteConfig = {
         id: 2,
         title: "AI Understanding & Planning",
         content:
-          "Suna analyzes your request, understands the context, and develops a structured plan to complete the task efficiently.",
+          "Ptah analyzes your request, understands the context, and develops a structured plan to complete the task efficiently.",
         image:
           "https://images.unsplash.com/photo-1686170287433-c95faf6d3608?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8fA%3D%3D",
       },
@@ -355,7 +355,7 @@ export const siteConfig = {
         id: 3,
         title: "Autonomous Execution",
         content:
-          "Using its capabilities and integrations, Suna executes the task independently, handling any complexities along the way.",
+          "Using its capabilities and integrations, Ptah executes the task independently, handling any complexities along the way.",
         image:
           "https://images.unsplash.com/photo-1720378042271-60aff1e1c538?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
       },
@@ -363,30 +363,30 @@ export const siteConfig = {
         id: 4,
         title: "Results & Learning",
         content:
-          "Suna delivers results and learns from each interaction, continuously improving its performance to better serve your needs.",
+          "Ptah delivers results and learns from each interaction, continuously improving its performance to better serve your needs.",
         image:
           "https://images.unsplash.com/photo-1666882990322-e7f3b8df4f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       },
     ],
   },
   bentoSection: {
-    title: "Empower Your Workflow with Kortix Suna",
+    title: "Empower Your Workflow with Kortix Ptah",
     description:
-      "Let Kortix Suna act on your behalf with advanced AI capabilities, seamless integrations, and autonomous task execution.",
+      "Let Kortix Ptah act on your behalf with advanced AI capabilities, seamless integrations, and autonomous task execution.",
     items: [
       {
         id: 1,
         content: <FirstBentoAnimation />,
         title: "Autonomous Task Execution",
         description:
-          "Experience true automation with Suna. Ask your AI Agent to complete tasks, research information, and handle complex workflows with minimal supervision.",
+          "Experience true automation with Ptah. Ask your AI Agent to complete tasks, research information, and handle complex workflows with minimal supervision.",
       },
       {
         id: 2,
         content: <SecondBentoAnimation />,
         title: "Seamless Integrations",
         description:
-          "Connect Suna to your existing tools for a unified workflow. Boost productivity through AI-powered interconnected systems.",
+          "Connect Ptah to your existing tools for a unified workflow. Boost productivity through AI-powered interconnected systems.",
       },
       {
         id: 3,
@@ -400,21 +400,21 @@ export const siteConfig = {
         ),
         title: "Intelligent Data Analysis",
         description:
-          "Transform raw data into actionable insights in seconds. Make better decisions with Suna's real-time, adaptive intelligence.",
+          "Transform raw data into actionable insights in seconds. Make better decisions with Ptah's real-time, adaptive intelligence.",
       },
       {
         id: 4,
         content: <FourthBentoAnimation once={false} />,
         title: "Complete Customization",
         description:
-          "Tailor Suna to your specific needs. As an open source solution, you have full control over its capabilities, integrations, and implementation.",
+          "Tailor Ptah to your specific needs. As an open source solution, you have full control over its capabilities, integrations, and implementation.",
       },
     ],
   },
   benefits: [
     {
       id: 1,
-      text: "Automate everyday tasks with Suna's powerful AI capabilities.",
+      text: "Automate everyday tasks with Ptah's powerful AI capabilities.",
       image: "/Device-6.png",
     },
     {
@@ -424,7 +424,7 @@ export const siteConfig = {
     },
     {
       id: 3,
-      text: "Improve focus on high-value work as Suna handles the routine.",
+      text: "Improve focus on high-value work as Ptah handles the routine.",
       image: "/Device-8.png",
     },
     {
@@ -730,13 +730,13 @@ export const siteConfig = {
 
         title: "Community Powered",
         description:
-          "Join a thriving community of developers and users continuously enhancing and expanding Suna's capabilities.",
+          "Join a thriving community of developers and users continuously enhancing and expanding Ptah's capabilities.",
       },
     ],
   },
   quoteSection: {
     quote:
-      "Kortix Suna has transformed how we approach everyday tasks. The level of automation it provides, combined with its open source nature, makes it an invaluable tool for our entire organization.",
+      "Kortix Ptah has transformed how we approach everyday tasks. The level of automation it provides, combined with its open source nature, makes it an invaluable tool for our entire organization.",
     author: {
       name: "Alex Johnson",
       role: "CTO, Innovatech",
@@ -746,7 +746,7 @@ export const siteConfig = {
   pricing: {
     title: "Open Source & Free Forever",
     description:
-      "Kortix Suna is 100% open source and free to use. No hidden fees, no premium features locked behind paywalls.",
+      "Kortix Ptah is 100% open source and free to use. No hidden fees, no premium features locked behind paywalls.",
     pricingItems: [
       {
         name: "Community",
@@ -761,7 +761,7 @@ export const siteConfig = {
           "Community support",
         ],
         description: "Perfect for individual users and developers",
-        buttonText: "Hire Suna",
+        buttonText: "Hire Ptah",
         buttonColor: "bg-accent text-primary",
         isPopular: false,
       },
@@ -1011,7 +1011,7 @@ export const siteConfig = {
   faqSection: {
     title: "Frequently Asked Questions",
     description:
-      "Answers to common questions about Kortix Suna and its capabilities. If you have any other questions, please don't hesitate to contact us.",
+      "Answers to common questions about Kortix Ptah and its capabilities. If you have any other questions, please don't hesitate to contact us.",
     faQitems: [
       {
         id: 1,
@@ -1021,42 +1021,42 @@ export const siteConfig = {
       },
       {
         id: 2,
-        question: "How does Kortix Suna work?",
+        question: "How does Kortix Ptah work?",
         answer:
-          "Kortix Suna works by analyzing your requirements, leveraging advanced AI algorithms to understand context, and executing tasks based on your instructions. It can integrate with your workflow, learn from feedback, and continuously improve its performance.",
+          "Kortix Ptah works by analyzing your requirements, leveraging advanced AI algorithms to understand context, and executing tasks based on your instructions. It can integrate with your workflow, learn from feedback, and continuously improve its performance.",
       },
       {
         id: 3,
-        question: "Is Kortix Suna really free?",
+        question: "Is Kortix Ptah really free?",
         answer:
-          "Yes, Kortix Suna is completely free and open source. We believe in democratizing AI technology and making it accessible to everyone. You can use it, modify it, and contribute to its development without any cost.",
+          "Yes, Kortix Ptah is completely free and open source. We believe in democratizing AI technology and making it accessible to everyone. You can use it, modify it, and contribute to its development without any cost.",
       },
       {
         id: 4,
-        question: "Can I integrate Suna with my existing tools?",
+        question: "Can I integrate Ptah with my existing tools?",
         answer:
-          "Yes, Kortix Suna is designed to be highly compatible with popular tools and platforms. We offer APIs and pre-built integrations for seamless connection with your existing workflow tools and systems.",
+          "Yes, Kortix Ptah is designed to be highly compatible with popular tools and platforms. We offer APIs and pre-built integrations for seamless connection with your existing workflow tools and systems.",
       },
       {
         id: 5,
-        question: "How can I contribute to Kortix Suna?",
+        question: "How can I contribute to Kortix Ptah?",
         answer:
-          "You can contribute to Kortix Suna by submitting pull requests on GitHub, reporting bugs, suggesting new features, or helping with documentation. Join our Discord community to connect with other contributors and Hire Suna.",
+          "You can contribute to Kortix Ptah by submitting pull requests on GitHub, reporting bugs, suggesting new features, or helping with documentation. Join our Discord community to connect with other contributors and Hire Ptah.",
       },
       {
         id: 6,
-        question: "How does Kortix Suna save me time?",
+        question: "How does Kortix Ptah save me time?",
         answer:
-          "Kortix Suna automates repetitive tasks, streamlines workflows, and provides quick solutions to common challenges. This automation and efficiency can save hours of manual work, allowing you to focus on more strategic activities.",
+          "Kortix Ptah automates repetitive tasks, streamlines workflows, and provides quick solutions to common challenges. This automation and efficiency can save hours of manual work, allowing you to focus on more strategic activities.",
       },
     ],
   },
   ctaSection: {
     id: "cta",
-    title: "Start Using Kortix Suna Today",
+    title: "Start Using Kortix Ptah Today",
     backgroundImage: "/holo.png",
     button: {
-      text: "Hire Suna today",
+      text: "Hire Ptah today",
       href: "/auth",
     },
     subtext: "The generalist AI Agent that acts on your behalf",
@@ -1073,9 +1073,9 @@ export const siteConfig = {
     {
       title: "Resources",
       links: [
-        { id: 5, title: "Documentation", url: "https://github.com/Kortix-ai/Suna" },
+        { id: 5, title: "Documentation", url: "https://github.com/Kortix-ai/Ptah" },
         { id: 7, title: "Discord", url: "https://discord.gg/Py6pCBUUPw" },
-        { id: 8, title: "GitHub", url: "https://github.com/Kortix-ai/Suna" },
+        { id: 8, title: "GitHub", url: "https://github.com/Kortix-ai/Ptah" },
       ],
     },
     {
@@ -1083,7 +1083,7 @@ export const siteConfig = {
       links: [
         { id: 9, title: "Privacy Policy", url: "https://suna.so/legal?tab=privacy" },
         { id: 10, title: "Terms of Service", url: "https://suna.so/legal?tab=terms" },
-        { id: 11, title: "License Apache 2.0", url: "https://github.com/Kortix-ai/Suna/blob/main/LICENSE" },
+        { id: 11, title: "License Apache 2.0", url: "https://github.com/Kortix-ai/Ptah/blob/main/LICENSE" },
       ],
     },
   ],

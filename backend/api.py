@@ -105,6 +105,8 @@ async def log_requests_middleware(request: Request, call_next):
         logger.error(f"Request failed: {method} {path} | Error: {str(e)} | Time: {process_time:.2f}s")
         raise
 
+# // TODO: Uncomment the following middleware if you want to implement DDoS protection and rate limiting
+
 # @app.middleware("http")
 # async def throw_error_middleware(request: Request, call_next):
 #     client_ip = request.client.host
