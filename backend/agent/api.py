@@ -837,6 +837,7 @@ async def initiate_agent_with_files(
     reasoning_effort: Optional[str] = Form("low"),
     stream: Optional[bool] = Form(True),
     enable_context_manager: Optional[bool] = Form(False),
+    mode_slug: Optional[str] = Form(None),  # New parameter for custom modes
     files: List[UploadFile] = File(default=[]),
     user_id: str = Depends(get_current_user_id)
 ):
@@ -965,9 +966,10 @@ async def initiate_agent_with_files(
             run_agent_background(
                 agent_run_id=agent_run_id, thread_id=thread_id, instance_id=instance_id,
                 project_id=project_id, sandbox=sandbox,
-                model_name=MODEL_NAME_ALIASES.get(model_name, model_name),
-                enable_thinking=enable_thinking, reasoning_effort=reasoning_effort,
-                stream=stream, enable_context_manager=enable_context_manager
+                model_name=MODEL_NAME_ALIASES.get(body.model_name, body.model_name),
+                enable_thinking=body.enable_thinking, reasoning_effort=body.reasoning_effort,
+                stream=body.stream, enable_context_manager=body.enable_context_manager,
+                mode_slug=mode_slug  # Pass the new parameter
             )
         )
         task.add_done_callback(lambda _: asyncio.create_task(_cleanup_redis_instance_key(agent_run_id)))

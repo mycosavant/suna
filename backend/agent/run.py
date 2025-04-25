@@ -34,7 +34,8 @@ async def run_agent(
     model_name: str = "anthropic/claude-3-7-sonnet-latest",
     enable_thinking: Optional[bool] = False,
     reasoning_effort: Optional[str] = 'low',
-    enable_context_manager: bool = True
+    enable_context_manager: bool = True,
+    mode_slug: Optional[str] = None  # New parameter for custom modes
 ):
     """Run the development agent with specified configuration."""
     
@@ -74,7 +75,7 @@ async def run_agent(
     if config.RAPID_API_KEY:
         thread_manager.add_tool(DataProvidersTool)
 
-    system_message = { "role": "system", "content": get_system_prompt() }
+    system_message = { "role": "system", "content": get_system_prompt(mode_slug) }  # Pass mode_slug if provided
 
     iteration_count = 0
     continue_execution = True
