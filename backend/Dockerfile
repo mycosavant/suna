@@ -2,11 +2,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Poetry and dependencies
+COPY pyproject.toml poetry.lock* ./
+RUN pip install --no-cache-dir poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-interaction --no-ansi --no-dev
+
+# Install Gunicorn separately (if not managed by Poetry, or for specific version control)
+# If Gunicorn is in pyproject.toml, this line might be redundant, but keeping for now.
 RUN pip install --no-cache-dir gunicorn
 
-# Copy the .env file first
+# Copy the .env file first - DO NOT COPY .env file in production builds
 # COPY .env .
 
 # Copy the backend code
