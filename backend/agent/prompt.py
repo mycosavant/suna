@@ -1,12 +1,21 @@
 # TODO: Improve focus on software development, coding, and programming tasks
 
 import datetime
+from typing import Optional
+from backend.utils.mode_utils import get_mode_details
+import logging
 
-SYSTEM_PROMPT = f"""
-You are Ptah, a highly capable semi-autonomous AI Agent created by a community of caring coders and developers. Your purpose is to assist users in a wide range of tasks with which you have expertise, including but not limited to software development , data analysis, content creation, and problem-solving. You are designed to be efficient, effective, and user-friendly.
+logger = logging.getLogger(__name__)
+
+# Base system prompt structure - parts will be replaced/augmented by custom modes
+
+# removed - UTC DATE: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')}
+# removed - UTC TIME: {datetime.datetime.now(datetime.timezone.utc).strftime('%H:%M:%S')}
+BASE_SYSTEM_PROMPT_TEMPLATE = f"""
+{{role_definition}}
 
 # 1. CORE IDENTITY & CAPABILITIES
-You are a full-spectrum autonomous agent capable of executing complex tasks across domains including information gathering, content creation, software development, data analysis, and problem-solving. You have access to a Linux environment with internet connectivity, file system operations, terminal commands, web browsing, and programming runtimes.
+{{core_identity}}
 
 # 2. EXECUTION ENVIRONMENT
 
@@ -17,8 +26,8 @@ You are a full-spectrum autonomous agent capable of executing complex tasks acro
 - All file operations (create, read, write, delete) expect paths relative to "/workspace"
 ## 2.2 SYSTEM INFORMATION
 - BASE ENVIRONMENT: Python 3.11 with Debian Linux (slim)
-- UTC DATE: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')}
-- UTC TIME: {datetime.datetime.now(datetime.timezone.utc).strftime('%H:%M:%S')}
+- UTC DATE: {{utc_date}}
+- UTC TIME: {{utc_time}}
 - INSTALLED TOOLS:
   * PDF Processing: poppler-utils, wkhtmltopdf
   * Document Processing: antiword, unrtf, catdoc
@@ -501,10 +510,45 @@ For casual conversation and social interactions:
   * Redundant verifications after completion are prohibited
 """
 
+# Default values if no mode is specified or found
+DEFAULT_ROLE_DEFINITION = """
+You are Ptah, a highly capable semi-autonomous AI Agent created by a community of caring coders and developers. Your purpose is to assist users in a wide range of tasks with which you have expertise, including but not limited to software development , data analysis, content creation, and problem-solving. You are designed to be efficient, effective, and user-friendly.
+"""
+DEFAULT_CORE_IDENTITY = """
+You are a full-spectrum autonomous agent capable of executing complex tasks across domains including information gathering, content creation, software development, data analysis, and problem-solving. You have access to a Linux environment with internet connectivity, file system operations, terminal commands, web browsing, and programming runtimes.
+"""
+DEFAULT_CUSTOM_INSTRUCTIONS = "" # No default custom instructions
 
-def get_system_prompt():
-    '''
-    Returns the system prompt
-    '''
-    return SYSTEM_PROMPT 
-    
+
+def get_system_prompt(mode_slug: Optional[str] = None) -> str:
+    """
+    Returns the system prompt, potentially customized based on the provided mode_slug.
+    """
+    role_definition = DEFAULT_ROLE_DEFINITION
+    core_identity = DEFAULT_CORE_IDENTITY
+    custom_instructions = DEFAULT_CUSTOM_INSTRUCTIONS
+
+    if mode_slug:
+        mode_details = get_mode_details(mode_slug)
+        if mode_details:
+            logger.info(f"Applying custom mode: {mode_slug}")
+            role_definition = mode_details.get('roleDefinition', DEFAULT_ROLE_DEFINITION)
+            # Core identity might not be defined per mode, so keep default if not present
+            core_identity = mode_details.get('coreIdentity', DEFAULT_CORE_IDENTITY) 
+            custom_instructions = mode_details.get('customInstructions', DEFAULT_CUSTOM_INSTRUCTIONS)
+        else:
+            logger.warning(f"Custom mode slug '{mode_slug}' not found. Using default prompt.")
+
+    # Populate the template
+    prompt = BASE_SYSTEM_PROMPT_TEMPLATE.format(
+        role_definition=role_definition.strip(),
+        core_identity=core_identity.strip(),
+        utc_date=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d'),
+        utc_time=datetime.datetime.now(datetime.timezone.utc).strftime('%H:%M:%S')
+    )
+
+    # Append custom instructions if they exist
+    if custom_instructions:
+        prompt += f"\n\n# CUSTOM INSTRUCTIONS FOR THIS MODE\n{custom_instructions.strip()}"
+
+    return prompt.strip()
