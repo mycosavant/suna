@@ -30,8 +30,22 @@ Ptah's powerful toolkit includes seamless browser automation to navigate the web
   - [Requirements](#requirements)
   - [Prerequisites](#prerequisites)
   - [Installation Steps](#installation-steps)
+- [Documentation](#documentation)
+  - [Payment & Subscription](#payment--subscription)
+  - [Code Reviews](#code-reviews)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
+
+## Documentation
+
+### Payment & Subscription
+The project includes a comprehensive subscription-based payment system using Stripe, with tiered plans based on minutes of agent usage. Documentation can be found in:
+- [Payment and Subscription Features](docs/payment-subscription-features.md) - Architecture, flow diagrams, and recommendations
+
+### Code Reviews
+Detailed code reviews of both the frontend and backend are available:
+- [Backend Code Review](docs/code-review/backend_review.md) - Analysis of the Python/FastAPI codebase
+- [Frontend Code Review](docs/code-review/frontend_review.md) - Analysis of the Next.js application
 
 ## Project Architecture
 
@@ -115,8 +129,10 @@ You'll need the following components:
    - Set `/usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf` as the Entrypoint
 
 4. **LLM API Keys**:
-   - Obtain an API key from [OpenAI](https://platform.openai.com/) or [Anthropic](https://www.anthropic.com/)
-   - While other providers should work via [LiteLLM](https://github.com/BerriAI/litellm), OpenAI and Anthropic are recommended
+   - **OpenAI**: Obtain an API key from [OpenAI](https://platform.openai.com/)
+   - **Anthropic**: Get an API key from [Anthropic](https://www.anthropic.com/)
+   - **OpenRouter**: For access to multiple models with one API key, get an API key from [OpenRouter](https://openrouter.ai/)
+   - See [OpenRouter Integration Guide](docs/OpenRouter-API-reference.md) for details on using OpenRouter
 
 5. **Search API Key** (Optional):
    - For enhanced search capabilities, obtain an [Tavily API key](https://tavily.com/)
@@ -133,8 +149,8 @@ You'll need the following components:
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/kortix-ai/Ptah.git
-cd Ptah
+git clone https://github.com/kortix-ai/suna.git
+cd suna
 ```
 
 2. **Configure backend environment**:
@@ -255,4 +271,3 @@ python api.py
 ## License
 
 Kortix Ptah is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
-

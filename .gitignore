@@ -27,6 +27,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# EVNT & DevFlow examples
+EVNT_EXAMPLE_IMPL/
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.

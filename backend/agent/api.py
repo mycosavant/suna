@@ -35,6 +35,7 @@ MODEL_NAME_ALIASES = {
     "gpt-4.1": "openai/gpt-4.1-2025-04-14",
     "gemini-flash-2.5": "openrouter/google/gemini-2.5-flash-preview",
     "grok-3": "xai/grok-3-fast-latest",
+    "grok-3-mini": "xai/grok-3-mini",
     "deepseek": "deepseek/deepseek-chat",
     "grok-3-mini": "xai/grok-3-mini-fast-beta",
 }

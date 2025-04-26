@@ -1,0 +1,27 @@
+graph TD
+    subgraph Frontend
+        UI[UI Components] --> SA[Server Actions]
+    end
+    
+    subgraph Supabase
+        SA --> EF[Edge Functions]
+        EF -->|Invoke| BF[billing-functions]
+        Webhook[Stripe Webhooks] --> BW[billing-webhooks]
+        DB[(Database)]
+        BF -->|Query/Update| DB
+        BW -->|Update| DB
+    end
+    
+    subgraph Backend
+        Agent[Agent Run] --> BC[Billing Check]
+        BC -->|Query| DB
+    end
+    
+    subgraph StripeServices
+        BF -->|API Calls| StripeAPI[Stripe]
+        StripeAPI -->|Events| Webhook
+    end
+    
+    UI -->|Display Plans| User
+    User -->|Select Plan| UI
+    BC -->|Enforce Limits| Agent
