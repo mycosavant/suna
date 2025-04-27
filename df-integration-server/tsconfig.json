@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "outDir": "./build",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "allowJs": true,
+        "lib": ["esnext", "dom"],
+        "types": ["node", "vitest"],
+        "declaration": true,
+        "sourceMap": true
+        // "allowImportingTsExtensions": true  // Removed due to compatibility issues
+    },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules"]
+}

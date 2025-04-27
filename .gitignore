@@ -26,6 +26,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+node_modules/
+*./node_modules/
 
 # EVNT & DevFlow examples
 EVNT_EXAMPLE_IMPL/

@@ -2,3 +2,7 @@ Hellp me understand the payment and subscription features of this project. use t
 
 - FAST API end points?
 - thinking_trace_agent :: analyze/summarize/review. `tool_use` from thinking trace
+
+
+- MCP versioning?
+    - secrets in `.env`?
